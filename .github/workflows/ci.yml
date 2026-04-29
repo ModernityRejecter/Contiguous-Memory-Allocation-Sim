@@ -1,0 +1,35 @@
+name: CI - Test Assembly Implementation
+
+on:
+  push:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-task1:
+    name: Test Task 1 (Unidimensional)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-multilib make python3
+    - name: Build Task 1
+      run: make task1
+    - name: Run Task 1 Tests
+      run: python3 scripts/checker.py task1
+
+  test-task2:
+    name: Test Task 2 (Bidimensional)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-multilib make python3
+    - name: Build Task 2
+      run: make task2
+    - name: Run Task 2 Tests
+      run: python3 scripts/checker.py task2
