@@ -9,7 +9,7 @@ The simulator models a memory space (8MB total) divided into blocks of 8KB. For 
 - **Task 1: Unidimensional Memory Allocation**
   Simulates a 1D memory array where files are allocated contiguously using a **First-Fit** strategy.
 - **Task 2: Bidimensional Memory Allocation**
-  Extends the simulation to a 2D memory grid (matrix) and includes more advanced operations like populating allocation data from real files on the disk using system calls.
+  Extends the simulation to a 2D memory grid (matrix). Note: The `CONCRETE` operation is not implemented in this version.
 
 ## Supported Operations
 
@@ -18,7 +18,7 @@ The simulator supports the following commands:
 - **GET (2)**: Retrieve the start and end indices of a file.
 - **DELETE (3)**: Free all blocks associated with a specific file.
 - **DEFRAGMENTATION (4)**: Reorganize memory to eliminate external fragmentation by moving all allocated files to the beginning of the memory space.
-- **CONCRETE (5 - Task 2 only)**: Scan a directory and allocate space for files based on their real size on disk.
+- **CONCRETE (5 - Task 2 only)**: *Not implemented.*
 
 ## Repository Structure
 
